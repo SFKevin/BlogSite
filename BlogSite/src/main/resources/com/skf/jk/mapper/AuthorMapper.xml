@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skf.jk.mapper.AuthorMapper">
+	<resultMap type="com.skf.domain.Author" id="authorRM">
+		<id property="authorId" column="AUTHOR_ID" />
+		<result property="authorPassword" column="AUTHOR_PASSWORD" />
+		<result property="authorNickname" column="AUTHOR_NICKNAME" />
+		<result property="authorQq" column="AUTHOR_QQ" />
+		<result property="authorEmail" column="AUTHOR_EMAIL" />
+		<result property="authorRegisterTime" column="AUTHOR_REGISTER_TIME" />
+		<result property="authorPicture" column="AUTHOR_PICTURE" />
+		<result property="authorSaying" column="AUTHOR_SAYING" />
+	</resultMap>
+	
+	<select id="get" parameterType="string" resultMap="authorRM">
+	    select * from author where author_id=#{author_id}
+	</select>
+	
+	<insert id="insert" parameterType="com.skf.domain.Author">
+	      insert into author(AUTHOR_ID,AUTHOR_PASSWORD,AUTHOR_NICKNAME,AUTHOR_QQ,AUTHOR_EMAIL,AUTHOR_REGISTER_TIME,AUTHOR_PICTURE,AUTHOR_SAYING)
+	      values(
+	       #{authorId},
+	       #{authorPassword},
+	       #{authorNickname},
+	       #{authorQq},
+	       #{authorEmail},
+	       #{authorRegisterTime},
+	       #{authorPicture},
+	       #{authorSaying}
+	      )
+	</insert>
+	
+	<update id="update" parameterType="com.skf.domain.Author">
+	      update author
+	      <set>
+	           <if test="authorPassword != null">AUTHOR_PASSWORD=#{authorPassword},</if>
+	           <if test="authorNickname != null">AUTHOR_NICKNAME=#{authorNickname},</if>
+	           <if test="authorQq != null">AUTHOR_QQ=#{authorQq},</if>
+	           <if test="authorEmail != null">AUTHOR_EMAIL=#{authorEmail},</if>
+	           <if test="authorRegisterTime != null">AUTHOR_REGISTER_TIME=#{authorRegisterTime},</if>
+	           <if test="authorPicture != null">AUTHOR_PICTURE=#{authorPicture},</if>
+	           <if test="authorSaying != null">AUTHOR_SAYING=#{authorSaying},</if>
+	      </set>
+	      where AUTHOR_ID=#{authorId}
+	</update>
+	<delete id="deleteById" parameterType="string">
+	       delete from author where AUTHOR_ID=#{authorId}
+	</delete>
+</mapper>
