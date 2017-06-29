@@ -31,4 +31,8 @@ public class AuthorServiceImpl implements AuthorService {
 		authorDao.deleteById(id);
 	}
 
+	public Author getAuthorByUsername(String username) {
+		return authorDao.getAuthorByUsername(username);
+	}
+
 }

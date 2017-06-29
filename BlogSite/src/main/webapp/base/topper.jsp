@@ -13,6 +13,12 @@
 		<div class="blogTitle">
 			<h1><a href="${path}/index.jsp">kfsun的博客</a></h1>
 			<h2>心有多大，舞台就有多大</h2>
+			<c:if test="${empty sessionScope.username}">
+	        <h2><a href="${path}/logining.action">登录</a> <a href="${path}/regist.action">注册</a></h2>
+	       </c:if>
+	       <c:if test="${!empty sessionScope.username}">
+	        <h2>${sessionScope.username}欢迎您!</h2>
+	       </c:if>
 		</div>
 		<div class="navigator">
 			<ul>

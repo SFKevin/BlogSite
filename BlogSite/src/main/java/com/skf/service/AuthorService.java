@@ -12,4 +12,6 @@ public interface AuthorService {
 	public void update(Author entity);
 
 	public void deleteById(Serializable id);
+
+	public Author getAuthorByUsername(String username);
 }

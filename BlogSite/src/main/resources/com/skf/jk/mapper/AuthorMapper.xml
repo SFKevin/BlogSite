@@ -14,10 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="authorSaying" column="AUTHOR_SAYING" />
 	</resultMap>
 	
+	<select id="getAuthorByUsername" parameterType="string" resultMap="authorRM">
+	    select * from author where AUTHOR_NICKNAME=#{authorNickname}
+	</select>
 	<select id="get" parameterType="string" resultMap="authorRM">
 	    select * from author where author_id=#{author_id}
 	</select>
-	
 	<insert id="insert" parameterType="com.skf.domain.Author">
 	      insert into author(AUTHOR_ID,AUTHOR_PASSWORD,AUTHOR_NICKNAME,AUTHOR_QQ,AUTHOR_EMAIL,AUTHOR_REGISTER_TIME,AUTHOR_PICTURE,AUTHOR_SAYING)
 	      values(

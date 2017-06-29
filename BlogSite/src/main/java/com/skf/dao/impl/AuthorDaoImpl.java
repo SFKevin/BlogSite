@@ -10,4 +10,9 @@ public class AuthorDaoImpl extends BaseDaoImpl<Author> implements AuthorDao {
 	public AuthorDaoImpl() {
 		super.setNs("com.skf.jk.mapper.AuthorMapper");
 	}
+
+	public Author getAuthorByUsername(String authorNickname) {
+		return super.getSqlSession().selectOne(
+				super.getNs() + ".getAuthorByUsername", authorNickname);
+	}
 }

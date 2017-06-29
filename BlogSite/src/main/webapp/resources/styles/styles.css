@@ -20,7 +20,7 @@
     height: 105px;
     left: 77px;
     line-height: 100px;
-    position: absolute;
+    position: relative;
     text-align: center;
     top: 80px;
     width: 310px;
@@ -40,11 +40,18 @@
     height: 75px;
     left: 140px;
     line-height: 180%;
-    position: absolute;
-    top: 220px;
+    position: relative;
+    top: 107px;
     width: 550px;
 }
-
+.blogTitle h2 a{
+	coler: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    height: 75px;
+    left: 140px;
+    line-height: 180%;
+}
 .navigator{
     background-color: #169fe6;
     border:0px;
