@@ -17,7 +17,7 @@
 	        <h2><a href="${path}/logining.action">登录</a> <a href="${path}/regist.action">注册</a></h2>
 	       </c:if>
 	       <c:if test="${!empty sessionScope.username}">
-	        <h2>${sessionScope.username}欢迎您!</h2>
+	        <h2>${sessionScope.username}欢迎您!&nbsp;&nbsp;&nbsp;<a href="${path}/blog.jsp">写文章</a></h2>
 	       </c:if>
 		</div>
 		<div class="navigator">

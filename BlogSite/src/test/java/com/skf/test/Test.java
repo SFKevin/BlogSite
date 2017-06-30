@@ -8,7 +8,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.skf.domain.Author;
+import com.skf.domain.Blog;
+import com.skf.domain.BlogVO;
 import com.skf.service.AuthorService;
+import com.skf.service.BlogService;
 
 public class Test {
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -30,5 +33,19 @@ public class Test {
 		author.setAuthorRegisterTime(date.format(new Date()));
 		author.setAuthorSaying("#########");
 		authorService.insert(author);
+	}
+
+	@org.junit.Test
+	public void BlogTest() {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+		BlogService blogService = (BlogService) ctx.getBean("blogServiceImpl");
+		Blog blog = new Blog();
+		BlogVO blogVO = new BlogVO();
+		blog.setBlogId("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
+		blog.setAuthorId("67c0b733-ffa0-4ca6-935a-1b98e95af6b9");
+		blog.setBlogTitle("Java");
+		blogService.insert(blog);
+		// blogVO =
+		// blogService.getBlogVO("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
 	}
 }
