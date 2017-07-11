@@ -18,7 +18,6 @@
 	
 	<!-- 1. 包扫描 controller -->
 	<context:component-scan base-package="com.skf.controller"/>
-	
 	<!-- 2. 内部资源视图解析器 -->
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value=""/>

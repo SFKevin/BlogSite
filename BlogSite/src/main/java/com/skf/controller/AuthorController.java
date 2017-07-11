@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.skf.domain.Author;
 import com.skf.service.AuthorService;
@@ -56,4 +58,15 @@ public class AuthorController {
 		return "/WEB-INF/pages/success.jsp";
 	}
 
+	@RequestMapping(value = "/volidate.action")
+	public @ResponseBody Author volidate(
+			@RequestParam("authorNickname") String authorNickname,
+			HttpServletResponse response) throws IOException {
+		Author author = authorService.getAuthorByUsername(authorNickname);
+		author.setAuthorPassword(null);
+		// JSONArray authorArray = JSONArray.fromObject(author);
+		// response.getWriter().print(authorArray.toString());
+		return author;
+
+	}
 }
