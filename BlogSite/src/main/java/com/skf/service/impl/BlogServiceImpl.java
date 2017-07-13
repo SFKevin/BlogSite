@@ -1,6 +1,7 @@
 package com.skf.service.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -34,6 +35,10 @@ public class BlogServiceImpl implements BlogService {
 
 	public void deleteById(Serializable id) {
 		blogDao.deleteById(id);
+	}
+
+	public List<Blog> getLatestBlog() {
+		return blogDao.getLatestBlog();
 	}
 
 }

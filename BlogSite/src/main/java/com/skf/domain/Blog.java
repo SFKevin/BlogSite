@@ -15,7 +15,7 @@ package com.skf.domain;
  * @data:2015年9月11日
  */
 public class Blog {
-	private String blogId;
+	private Integer blogId;
 
 	private String authorId;
 	private String blogColumnAlias;
@@ -34,11 +34,11 @@ public class Blog {
 
 	private String blogsCommentID;
 
-	public String getBlogId() {
+	public Integer getBlogId() {
 		return blogId;
 	}
 
-	public void setBlogId(String blogId) {
+	public void setBlogId(Integer blogId) {
 		this.blogId = blogId;
 	}
 

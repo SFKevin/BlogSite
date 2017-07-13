@@ -1,7 +1,7 @@
 package com.skf.domain;
 
 public class BlogVO {
-	private String blogId;
+	private Integer blogId;
 
 	private String authorId;
 	private String blogColumnAlias;
@@ -21,11 +21,11 @@ public class BlogVO {
 	private String blogsCommentID;
 	private Author author;
 
-	public String getBlogId() {
+	public Integer getBlogId() {
 		return blogId;
 	}
 
-	public void setBlogId(String blogId) {
+	public void setBlogId(Integer blogId) {
 		this.blogId = blogId;
 	}
 

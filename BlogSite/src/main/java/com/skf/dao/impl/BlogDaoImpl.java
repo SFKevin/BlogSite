@@ -1,6 +1,7 @@
 package com.skf.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +17,11 @@ public class BlogDaoImpl extends BaseDaoImpl<Blog> implements BlogDao {
 
 	public BlogVO getBlogVO(Serializable id) {
 		return this.getSqlSession().selectOne(super.getNs() + ".getBlogVO", id);
+	}
+
+	public List<Blog> getLatestBlog() {
+		return this.getSqlSession()
+				.selectList(super.getNs() + ".getLatestBlog");
 	}
 
 }

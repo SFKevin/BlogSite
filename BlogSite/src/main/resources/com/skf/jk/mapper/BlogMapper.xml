@@ -77,4 +77,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteById" parameterType="string">
 	       delete from blog where BLOG_ID=#{blogId}
 	</delete>
+	
+	<select id="getLatestBlog" resultMap="blogRM">
+	SELECT * FROM blog ORDER BY blog_id DESC LIMIT 5;
+	</select>
 </mapper>

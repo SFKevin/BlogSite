@@ -1,6 +1,7 @@
 package com.skf.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.skf.domain.Blog;
 import com.skf.domain.BlogVO;
@@ -15,4 +16,6 @@ public interface BlogService {
 	public void update(Blog entity);
 
 	public void deleteById(Serializable id);
+
+	public List<Blog> getLatestBlog();
 }

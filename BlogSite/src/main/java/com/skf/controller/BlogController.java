@@ -3,7 +3,7 @@ package com.skf.controller;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -32,12 +32,19 @@ public class BlogController {
 				.getAttribute("username");
 		blog.setAuthorId(authorService.getAuthorByUsername(username)
 				.getAuthorId());
-		blog.setBlogId(UUID.randomUUID().toString());
+		// blog.setBlogId(UUID.randomUUID().toString());
 		blog.setBlogCreatetime(date.format(new Date()));
 		blogService.insert(blog);
 		model.addAttribute("blog", blog);
 		model.addAttribute("author", username);
 		return "/WEB-INF/pages/blogview.jsp";
 
+	}
+
+	@RequestMapping(value = "indexList.action")
+	public String sysmain(Model model) {
+		List<Blog> blogs = blogService.getLatestBlog();
+		model.addAttribute("dataList", blogs);
+		return "/indexList.jsp";
 	}
 }

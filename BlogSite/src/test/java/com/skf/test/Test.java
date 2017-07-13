@@ -2,6 +2,7 @@ package com.skf.test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.context.ApplicationContext;
@@ -39,13 +40,12 @@ public class Test {
 	public void BlogTest() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		BlogService blogService = (BlogService) ctx.getBean("blogServiceImpl");
+		List<Blog> blogs = blogService.getLatestBlog();
 		Blog blog = new Blog();
 		BlogVO blogVO = new BlogVO();
-		blog.setBlogId("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
 		blog.setAuthorId("67c0b733-ffa0-4ca6-935a-1b98e95af6b9");
 		blog.setBlogTitle("Java");
 		blogService.insert(blog);
-		// blogVO =
-		// blogService.getBlogVO("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
+		blogVO = blogService.getBlogVO("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
 	}
 }
