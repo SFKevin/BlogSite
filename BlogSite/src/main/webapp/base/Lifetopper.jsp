@@ -36,12 +36,12 @@
 		</div>
 		<div class="navigator">
 			<ul>
-				<li class="clicked"><a href="${path}/index.jsp">首页</a></li>
+				<li><a href="${path}/index.jsp">首页</a></li>
 				<li><a href="${path}/java.action">JAVA</a></li>
 				<li><a href="${path}/android.action">Andriod</a></li>
 				<li><a href="${path}/design.action">架构设计</a></li>
 				<li><a href="${path}/other.action">其他技术</a></li>
-				<li><a href="${path}/life.action">程序人生</a></li>
+				<li class="clicked"><a href="${path}/life.action">程序人生</a></li>
 				<li><a href="${path}/work.action">我的作品</a></li>
 				<li><a href="${path}/about.action">关于博主</a></li>
 			</ul>

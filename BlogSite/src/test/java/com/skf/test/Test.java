@@ -41,11 +41,13 @@ public class Test {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		BlogService blogService = (BlogService) ctx.getBean("blogServiceImpl");
 		List<Blog> blogs = blogService.getLatestBlog();
+		List<Blog> blogs2 = blogService.getBlogsByAlias("java");
 		Blog blog = new Blog();
 		BlogVO blogVO = new BlogVO();
 		blog.setAuthorId("67c0b733-ffa0-4ca6-935a-1b98e95af6b9");
 		blog.setBlogTitle("Java");
-		blogService.insert(blog);
-		blogVO = blogService.getBlogVO("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
+		// blogService.insert(blog);
+		// blogVO =
+		// blogService.getBlogVO("e9b4a2cf-2920-4c0b-a217-0a0911bbebae");
 	}
 }

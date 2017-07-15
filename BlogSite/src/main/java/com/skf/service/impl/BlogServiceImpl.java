@@ -41,4 +41,8 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.getLatestBlog();
 	}
 
+	public List<Blog> getBlogsByAlias(String blogColumnAlias) {
+		return blogDao.getBlogsByAlias(blogColumnAlias);
+	}
+
 }

@@ -74,11 +74,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	      </set>
 	      where BLOG_ID=#{blogId}
 	</update>
-	<delete id="deleteById" parameterType="string">
+	<delete id="deleteById" parameterType="int">
 	       delete from blog where BLOG_ID=#{blogId}
 	</delete>
 	
 	<select id="getLatestBlog" resultMap="blogRM">
 	SELECT * FROM blog ORDER BY blog_id DESC LIMIT 5;
 	</select>
+	<select id="getBlogsByAlias" parameterType="string" resultMap="blogRM">
+	SELECT * FROM blog where BLOG_COLUMN_ALIAS=#{blogColumnAlias} ORDER BY blog_id DESC LIMIT 5;
+	</select>
+	
 </mapper>

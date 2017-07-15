@@ -18,4 +18,6 @@ public interface BlogService {
 	public void deleteById(Serializable id);
 
 	public List<Blog> getLatestBlog();
+
+	public List<Blog> getBlogsByAlias(String blogColumnAlias);
 }

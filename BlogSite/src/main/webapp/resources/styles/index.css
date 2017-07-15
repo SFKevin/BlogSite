@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#title {
+	font-family: Times, TimesNR, 'New Century Schoolbook', Georgia,
+		'New York', serif;
+	font-size:20px;
+	font-color:#700000;
+	font-weight:bold;
+	font-style:italic;
+	text-align:left; 
+}
+td a{
+	color:#000000;
+}

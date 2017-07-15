@@ -10,4 +10,6 @@ public interface BlogDao extends BaseDao<Blog> {
 	public BlogVO getBlogVO(Serializable id);
 
 	public List<Blog> getLatestBlog();
+
+	public List<Blog> getBlogsByAlias(String blogColumnAlias);
 }

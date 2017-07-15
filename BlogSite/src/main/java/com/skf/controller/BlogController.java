@@ -44,7 +44,24 @@ public class BlogController {
 	@RequestMapping(value = "indexList.action")
 	public String sysmain(Model model) {
 		List<Blog> blogs = blogService.getLatestBlog();
+		for (Blog blog : blogs) {
+			if (blog.getBlogContent().length() > 150) {
+				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
+						+ "......");
+
+			}
+		}
 		model.addAttribute("dataList", blogs);
 		return "/indexList.jsp";
+	}
+
+	@RequestMapping(value = "view.action")
+	public String view(int blog_Id, Model model) {
+		Blog blog = blogService.get(blog_Id);
+		String username = authorService.get(blog.getAuthorId())
+				.getAuthorNickname();
+		model.addAttribute("blog", blog);
+		model.addAttribute("author", username);
+		return "/WEB-INF/pages/blogview.jsp";
 	}
 }
