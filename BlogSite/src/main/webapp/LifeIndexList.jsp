@@ -25,7 +25,7 @@
 					<div class="tabs-title">
 						<ul>
 							<li id="zdbl" class="zdbl hit">最新发布</li>
-							<li class="readmore"><span>more</span></li>
+							<li class="readmore"><a href="${path}/lifeAll.action?pageNo=1"><span>more</span></a></li>
 						</ul>
 					</div>
 					<br>

@@ -100,6 +100,8 @@ body {
 			var obj=eval("("+data+")");
 			if(obj[0].authorNickname==$("#authorNickname").val()){
 			  $("#usernameVolidate").css("display","block");
+			}else{
+			  $("#usernameVolidate").css("display","none");
 			}
 			});
 		});

@@ -19,5 +19,7 @@ public interface BlogService {
 
 	public List<Blog> getLatestBlog();
 
+	public List<Blog> getAllBlog();
+
 	public List<Blog> getBlogsByAlias(String blogColumnAlias);
 }

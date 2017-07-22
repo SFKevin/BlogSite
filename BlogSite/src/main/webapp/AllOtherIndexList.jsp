@@ -15,7 +15,7 @@
 </head>
 <body>
 	<!-- 顶部 -->
-	<jsp:include page="base/Javatopper.jsp" />
+	<jsp:include page="base/Othertopper.jsp" />
 	<!-- 中间内容 -->
 	<div class="home">
 		<div class="content-wrap">
@@ -24,8 +24,6 @@
 				<div class="blog-tabs">
 					<div class="tabs-title">
 						<ul>
-							<li id="zdbl" class="zdbl hit">最新发布</li>
-							<li class="readmore"><a href="${path}/javaAll.action?pageNo=1"><span>more</span></a></li>
 						</ul>
 					</div>
 					<br>
@@ -42,6 +40,22 @@
 						<tr><td><hr></td></tr>
 					</c:forEach>
 					</table>
+					<c:if test="${pageNo eq 1}">首页</c:if>
+					<c:if test="${pageNo gt 1}">
+						<a href="${path}/otherAll.action?pageNo=1">首页</a>
+					</c:if>
+					<c:if test="${pageNo eq 1}">上一页</c:if>
+					<c:if test="${pageNo gt 1}">
+						<a href="${path}/otherAll.action?pageNo=${pageNo-1}">上一页</a>
+					</c:if>
+					<c:if test="${pageNo eq maxPage}">下一页</c:if>
+					<c:if test="${pageNo lt maxPage}">
+						<a href="${path}/otherAll.action?pageNo=${pageNo+1}">下一页</a>
+					</c:if>
+					<c:if test="${pageNo eq maxPage}">末页</c:if>
+					<c:if test="${pageNo lt maxPage}">
+						<a href="${path}/otherAll.action?pageNo=${maxPage}">末页</a>
+					</c:if>
 				</div>
 			</div>
 			<div class="sidebar fr">

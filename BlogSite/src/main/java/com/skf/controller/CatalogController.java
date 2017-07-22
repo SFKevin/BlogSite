@@ -22,6 +22,9 @@ public class CatalogController {
 	@RequestMapping(value = "java.action")
 	public String viewJava(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("java");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -35,6 +38,9 @@ public class CatalogController {
 	@RequestMapping(value = "android.action")
 	public String viewAndroid(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("android");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -48,6 +54,9 @@ public class CatalogController {
 	@RequestMapping(value = "design.action")
 	public String viewDesign(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("design");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -61,6 +70,9 @@ public class CatalogController {
 	@RequestMapping(value = "other.action")
 	public String viewOther(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("other");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -74,6 +86,9 @@ public class CatalogController {
 	@RequestMapping(value = "life.action")
 	public String viewLife(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("life");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -87,6 +102,9 @@ public class CatalogController {
 	@RequestMapping(value = "work.action")
 	public String viewWork(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("work");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)
@@ -100,6 +118,9 @@ public class CatalogController {
 	@RequestMapping(value = "about.action")
 	public String viewAbout(Model model) {
 		List<Blog> blogs = blogService.getBlogsByAlias("about");
+		if (blogs.size() > 5) {
+			blogs = blogs.subList(0, 5);
+		}
 		for (Blog blog : blogs) {
 			if (blog.getBlogContent().length() > 150) {
 				blog.setBlogContent(blog.getBlogContent().substring(0, 150)

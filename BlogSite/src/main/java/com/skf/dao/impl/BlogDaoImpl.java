@@ -29,4 +29,8 @@ public class BlogDaoImpl extends BaseDaoImpl<Blog> implements BlogDao {
 				super.getNs() + ".getBlogsByAlias", blogColumnAlias);
 	}
 
+	public List<Blog> getAllBlog() {
+		return this.getSqlSession().selectList(super.getNs() + ".getAllBlog");
+	}
+
 }

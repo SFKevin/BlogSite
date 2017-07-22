@@ -82,7 +82,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT * FROM blog ORDER BY blog_id DESC LIMIT 5;
 	</select>
 	<select id="getBlogsByAlias" parameterType="string" resultMap="blogRM">
-	SELECT * FROM blog where BLOG_COLUMN_ALIAS=#{blogColumnAlias} ORDER BY blog_id DESC LIMIT 5;
+	SELECT * FROM blog where BLOG_COLUMN_ALIAS=#{blogColumnAlias} ORDER BY blog_id DESC;
 	</select>
-	
+	<select id="getAllBlog" resultMap="blogRM">
+	SELECT * FROM blog ORDER BY blog_id DESC;
+	</select>
 </mapper>

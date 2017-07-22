@@ -40,7 +40,7 @@ public class Test {
 	public void BlogTest() {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		BlogService blogService = (BlogService) ctx.getBean("blogServiceImpl");
-		List<Blog> blogs = blogService.getLatestBlog();
+		List<Blog> blogs = blogService.getAllBlog();
 		List<Blog> blogs2 = blogService.getBlogsByAlias("java");
 		Blog blog = new Blog();
 		BlogVO blogVO = new BlogVO();
