@@ -14,4 +14,6 @@ public interface BlogDao extends BaseDao<Blog> {
 	public List<Blog> getBlogsByAlias(String blogColumnAlias);
 
 	public List<Blog> getAllBlog();
+
+	public List<Blog> search(List<String> list);
 }

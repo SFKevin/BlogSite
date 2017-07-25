@@ -1,30 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title></title>
-<script language="javascript"
-	src="${pageContext.request.contextPath}/resources/js/jquery-1.4.2.js"></script>
-<script type="text/javascript">
-	function search() {
-		var str = $("#q").val();
-		if (str != null) {
-		window.location.href="${path}/search.action?query="+encodeURI(encodeURI(str));
-		}
-	};
-</script>
 </head>
 <body>
 	<!-- 搜索按钮 -->
-	<div class="form-group search-col">
-		<input id="q" class="input form-control" type="text" name="q"
-			title="关键字查找" autocomplete="off" placeholder="关键字查找">
-		<button class="search-submit" type="submit" value="Search"
-			onclick="search()"></button>
+	<div class="form-group search-col">、
+		<input id="q" class="input form-control" type="text" name="q" title="关键字查找" autocomplete="off" placeholder="关键字查找">
+		<button class="search-submit" type="submit" value="Search" onclick="javascript:void(0)"></button>
 	</div>
 	<!-- 关注我 -->
 	<div class="widget d_postlist d-tg-rz">
@@ -36,11 +23,9 @@
 			<li><a class="wdqq" href="javascript:void(0)">qq</a></li>
 			<li><a class="wdwx" href="javascript:void(0)">微信</a></li>
 		</ul>
-		<a class="wdlj github" href="https://github.com/chenssy89"
-			target="_blank">我的Github</a> <a class="wdlj cnblogs fl"
-			href="http://blog.csdn.net/chenssy/" target="_blank">我的博客园</a> <a
-			class="wdlj csdn fr" href="http://www.cnblogs.com/chenssy"
-			target="_blank">我的CSDN</a>
+		<a class="wdlj github" href="https://github.com/chenssy89" target="_blank">我的Github</a>
+		<a class="wdlj cnblogs fl" href="http://blog.csdn.net/chenssy/" target="_blank">我的博客园</a>
+		<a class="wdlj csdn fr" href="http://www.cnblogs.com/chenssy" target="_blank">我的CSDN</a>
 	</div>
 	<!-- 博主简介 -->
 	<div class="widget d_postlist">

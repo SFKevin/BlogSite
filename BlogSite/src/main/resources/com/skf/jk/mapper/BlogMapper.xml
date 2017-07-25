@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="blogsRecommendNum" column="BLOG_RECOMMEND_NUM" />
 		<result property="blogsCommentID" column="BLOG_COMMENTID" />
 		<association property="author" javaType="com.skf.domain.Author">
-		    <id property="authorId" column="AUTHOR_ID" />
+			<id property="authorId" column="AUTHOR_ID" />
 			<result property="authorPassword" column="AUTHOR_PASSWORD" />
 			<result property="authorNickname" column="AUTHOR_NICKNAME" />
 			<result property="authorQq" column="AUTHOR_QQ" />
@@ -38,53 +38,67 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="blogsCommentID" column="BLOG_COMMENTID" />
 	</resultMap>
 	<select id="get" parameterType="string" resultMap="blogRM">
-	    select * from blog where BLOG_ID=#{blogId}
+		select * from blog where BLOG_ID=#{blogId}
 	</select>
 	<select id="getBlogVO" parameterType="string" resultMap="blogVO">
-	    select blog.*,author.* from blog,author where blog.AUTHOR_ID=author.AUTHOR_ID
+		select blog.*,author.* from blog,author where
+		blog.AUTHOR_ID=author.AUTHOR_ID
 	</select>
 	<insert id="insert" parameterType="com.skf.domain.Blog">
-	      insert into blog(BLOG_ID,AUTHOR_ID,BLOG_COLUMN_ALIAS,BLOG_TITLE,BLOG_CONTENT,BLOG_CREATETIME,BLOG_VIEWER_NUM,BLOG_STICK,BLOG_RECOMMEND_NUM,BLOG_COMMENTID)
-	      values(
-	       #{blogId},
-	       #{authorId},
-	       #{blogColumnAlias},
-	       #{blogTitle},
-	       #{blogContent},
-	       #{blogCreatetime},
-	       #{blogViewNum},
-	       #{blogStick},
-	       #{blogsRecommendNum},
-	       #{blogsCommentID}
-	      )
+		insert into
+		blog(BLOG_ID,AUTHOR_ID,BLOG_COLUMN_ALIAS,BLOG_TITLE,BLOG_CONTENT,BLOG_CREATETIME,BLOG_VIEWER_NUM,BLOG_STICK,BLOG_RECOMMEND_NUM,BLOG_COMMENTID)
+		values(
+		#{blogId},
+		#{authorId},
+		#{blogColumnAlias},
+		#{blogTitle},
+		#{blogContent},
+		#{blogCreatetime},
+		#{blogViewNum},
+		#{blogStick},
+		#{blogsRecommendNum},
+		#{blogsCommentID}
+		)
 	</insert>
-	
+
 	<update id="update" parameterType="com.skf.domain.Blog">
-	      update blog
-	      <set>
-	           <if test="authorId != null">AUTHOR_ID=#{authorId},</if>
-	           <if test="blogColumnAlias != null">BLOG_COLUMN_ALIAS=#{blogColumnAlias},</if>
-	           <if test="blogTitle != null">BLOG_TITLE=#{blogTitle},</if>
-	           <if test="blogContent != null">BLOG_CONTENT=#{blogContent},</if>
-	           <if test="blogCreatetime != null">BLOG_CREATETIME=#{blogCreatetime},</if>
-	           <if test="blogViewNum != null">BLOG_VIEWER_NUM=#{blogViewNum},</if>
-	           <if test="blogStick != null">BLOG_STICK=#{blogStick},</if>
-	           <if test="blogsRecommendNum != null">BLOG_RECOMMEND_NUM=#{blogsRecommendNum},</if>
-	           <if test="blogsCommentID != null">BLOG_COMMENTID=#{blogsCommentID},</if>
-	      </set>
-	      where BLOG_ID=#{blogId}
+		update blog
+		<set>
+			<if test="authorId != null">AUTHOR_ID=#{authorId},</if>
+			<if test="blogColumnAlias != null">BLOG_COLUMN_ALIAS=#{blogColumnAlias},</if>
+			<if test="blogTitle != null">BLOG_TITLE=#{blogTitle},</if>
+			<if test="blogContent != null">BLOG_CONTENT=#{blogContent},</if>
+			<if test="blogCreatetime != null">BLOG_CREATETIME=#{blogCreatetime},</if>
+			<if test="blogViewNum != null">BLOG_VIEWER_NUM=#{blogViewNum},</if>
+			<if test="blogStick != null">BLOG_STICK=#{blogStick},</if>
+			<if test="blogsRecommendNum != null">BLOG_RECOMMEND_NUM=#{blogsRecommendNum},</if>
+			<if test="blogsCommentID != null">BLOG_COMMENTID=#{blogsCommentID},</if>
+		</set>
+		where BLOG_ID=#{blogId}
 	</update>
 	<delete id="deleteById" parameterType="int">
-	       delete from blog where BLOG_ID=#{blogId}
+		delete from blog where BLOG_ID=#{blogId}
 	</delete>
-	
+
 	<select id="getLatestBlog" resultMap="blogRM">
-	SELECT * FROM blog ORDER BY blog_id DESC LIMIT 5;
+		SELECT * FROM blog ORDER BY blog_id DESC LIMIT 5;
 	</select>
 	<select id="getBlogsByAlias" parameterType="string" resultMap="blogRM">
-	SELECT * FROM blog where BLOG_COLUMN_ALIAS=#{blogColumnAlias} ORDER BY blog_id DESC;
+		SELECT * FROM blog where BLOG_COLUMN_ALIAS=#{blogColumnAlias} ORDER BY
+		blog_id DESC;
 	</select>
 	<select id="getAllBlog" resultMap="blogRM">
-	SELECT * FROM blog ORDER BY blog_id DESC;
+		SELECT * FROM blog ORDER BY blog_id DESC;
+	</select>
+	<select id="search" parameterType="java.util.List" resultMap="blogRM">
+		select * from blog
+		<where>
+			<if test="list!=null and list.size()>0">
+				<foreach collection="list"  index="index" item="item" open=""
+					separator="and" close="">
+					BLOG_TITLE like #{item}
+				</foreach>
+			</if>
+		</where>
 	</select>
 </mapper>

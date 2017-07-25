@@ -22,4 +22,6 @@ public interface BlogService {
 	public List<Blog> getAllBlog();
 
 	public List<Blog> getBlogsByAlias(String blogColumnAlias);
+
+	public List<Blog> search(List<String> list);
 }

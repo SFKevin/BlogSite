@@ -33,4 +33,8 @@ public class BlogDaoImpl extends BaseDaoImpl<Blog> implements BlogDao {
 		return this.getSqlSession().selectList(super.getNs() + ".getAllBlog");
 	}
 
+	public List<Blog> search(List<String> list) {
+		return this.getSqlSession().selectList(super.getNs() + ".search", list);
+	}
+
 }

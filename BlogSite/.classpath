@@ -41,5 +41,7 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jackson-databind-2.1.5.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/json-lib-2.2.2-jdk15.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/IKAnalyzer2012.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/lucene-core-3.6.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

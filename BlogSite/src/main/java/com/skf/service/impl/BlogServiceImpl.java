@@ -49,4 +49,7 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.getAllBlog();
 	}
 
+	public List<Blog> search(List<String> list) {
+		return blogDao.search(list);
+	}
 }
