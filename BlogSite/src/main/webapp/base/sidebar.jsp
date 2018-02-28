@@ -36,9 +36,9 @@
 			<li><a class="wdqq" href="javascript:void(0)">qq</a></li>
 			<li><a class="wdwx" href="javascript:void(0)">微信</a></li>
 		</ul>
-		<a class="wdlj github" href="https://github.com/chenssy89"
+		<a class="wdlj github" href="https://github.com/SFKevin/"
 			target="_blank">我的Github</a> <a class="wdlj cnblogs fl"
-			href="http://blog.csdn.net/chenssy/" target="_blank">我的博客园</a> <a
+			href="#" target="_blank">我的博客园</a> <a
 			class="wdlj csdn fr" href="http://www.cnblogs.com/chenssy"
 			target="_blank">我的CSDN</a>
 	</div>
